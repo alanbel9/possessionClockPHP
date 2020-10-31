@@ -17,7 +17,7 @@
     <div class="title">RELOJ DE POSESIÓN</div>
 
     <div class="clock-container">
-        <input type="text" id="clock-timer" class="clock-timer" value="24" readonly />
+        <input type="text" id="clock-timer" class="clock-timer" value="" readonly />
     </div>
 
     <div class="buttons-container">
@@ -35,4 +35,5 @@
     if (typeof BEL !== 'object') {
         var BEL = {}
     }
+    BEL.clock.init();
 </script>
