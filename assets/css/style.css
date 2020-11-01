@@ -1,19 +1,19 @@
+/**************************** General styles ******************************/
 body {
     font-family: 'Helvetica', Arial, sans-serif;
     background-color: #F2F1EF;
     display: flex;
     height: auto;
 }
-.wrapper {
-    width: 100%;
+
+/**************************** Menu styles ******************************/
+#menu {
+    background-color: lightblue;
+    margin-bottom: 60px;
 }
-.wrapper .title {
-    display: block;
-    margin: 0 auto;
-    font-weight: bold;
-    font-size: 50px;
-    text-align: center;
-}
+
+
+/**************************** Clock styles ******************************/
 .clock-container {
     text-align: center;
     margin-top: 50px;
@@ -23,4 +23,8 @@ body {
     height: 500px;
     width: 500px;
     font-size: 400px;
+}
+
+@media (min-width: 768px) {
+
 }

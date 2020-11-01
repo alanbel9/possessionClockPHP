@@ -8,4 +8,4 @@
 // ini_set('display_errors', 1);
 
 // Call the view
-require_once(__DIR__ . "/../views/clock.php");
+require_once("views/home.php");
