@@ -16,10 +16,10 @@
                         <button type="button" class="w-100 btn btn-outline-success btn-lg" onclick="BEL.clock.start()">START</button>
                     </div>
                     <div class="col-md-4">
-                        <button type="button" class="w-100 btn btn-outline-danger btn-lg">STOP</button>
+                        <button type="button" class="w-100 btn btn-outline-danger btn-lg" onclick="BEL.clock.stop()">STOP</button>
                     </div>
                     <div class="col-md-4">
-                        <button type="button" class="w-100 btn btn-outline-info btn-lg">RESET</button>
+                        <button type="button" class="w-100 btn btn-outline-info btn-lg" onclick="BEL.clock.reset()">RESET</button>
                     </div>
                 </div>
             </div>

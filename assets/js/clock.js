@@ -18,6 +18,17 @@ BEL.clock = {
         if (clockItem) {
             clockItem.value = BEL.clock.full_possession;
         }
+
+
+        // https://www.jqueryscript.net/time-clock/Multifunctional-jQuery-Countdown-Stopwatch-Plugin-Timer-js.html
+        debugger;
+        var count = 0;
+        var timer = jQuery.timer(function() {
+            $('#' + BEL.clock.clock_id).html(++count);
+        });
+        timer.set({ time : 1000, autostart : true });
+
+        debugger;
     },
 
     /**
@@ -25,7 +36,6 @@ BEL.clock = {
      */
     start: function () {
         BEL.clock.running = true;
-
         BEL.clock.crono = setInterval(function () {
             if (BEL.clock.running) {
                 var clockItem = document.getElementById(BEL.clock.clock_id);
@@ -44,9 +54,9 @@ BEL.clock = {
     },
     stop: function () {
         BEL.clock.running = false;
-        clearInterval(BEL.clock.crono);
+      //  clearInterval(BEL.clock.crono);
     },
     reset: function () {
-        
+        BEL.clock.running = false;
     }
 };
