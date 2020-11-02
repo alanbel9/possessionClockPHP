@@ -19,16 +19,7 @@ BEL.clock = {
             clockItem.value = BEL.clock.full_possession;
         }
 
-
-        // https://www.jqueryscript.net/time-clock/Multifunctional-jQuery-Countdown-Stopwatch-Plugin-Timer-js.html
-        debugger;
-        var count = 0;
-        var timer = jQuery.timer(function() {
-            $('#' + BEL.clock.clock_id).html(++count);
-        });
-        timer.set({ time : 1000, autostart : true });
-
-        debugger;
+        this.keyDownEvents();
     },
 
     /**
@@ -54,9 +45,43 @@ BEL.clock = {
     },
     stop: function () {
         BEL.clock.running = false;
-      //  clearInterval(BEL.clock.crono);
+        clearInterval(BEL.clock.crono);
     },
     reset: function () {
         BEL.clock.running = false;
+        BEL.clock.current_second = BEL.clock.full_possession;
+        clearInterval(BEL.clock.crono);
+
+        var clockItem = document.getElementById(BEL.clock.clock_id);
+        if (clockItem) {
+            clockItem.value = BEL.clock.full_possession;
+        }
+    },
+    /**
+     * Key Down Events - Keyboard
+     */
+    keyDownEvents: function () {
+        jQuery("#key-down-events").keydown(function(event) {
+            switch (event.which) {
+                case 81:  // Q
+                    BEL.clock.start();
+                    break;
+                case 87:  // W
+                    BEL.clock.stop();
+                    break;
+                case 69:  // E
+                    BEL.clock.reset();
+                    break;
+            }
+        });
+    },
+    /**
+     * Open Popup with Possession Clock & Add Events JS
+     */
+    openPopup : function () {
+      //  var popup = window.open("test.html","mypopup","width=500,height=300");
+      //  popup.document.getElementById("player").someFunction();
+
+        var popup = window.open("possessionClock.php","popup","width=700,height=700");
     }
 };
