@@ -3,7 +3,7 @@ if (typeof BEL !== 'object') {
 }
 
 BEL.clock = {
-    running: false,
+    running: null,
     full_possession: 24,
     current_second: null,
     clock_id: 'clock-timer',
@@ -25,14 +25,18 @@ BEL.clock = {
     /**
      * CLOCK  BUTTONS PROCESSES
      */
-    start: function () {
-        BEL.clock.running = true;
-        BEL.clock.crono = setInterval(function () {
-            if (BEL.clock.running) {
-                var clockItem = document.getElementById(BEL.clock.clock_id);
+    startStop: function () {
+        if (BEL.clock.running == null) {
+            BEL.clock.running = true;
+        } else {
+            BEL.clock.running = !BEL.clock.running;
+        }
 
+        if (BEL.clock.running) {
+            BEL.clock.crono = setInterval(function () {
+                var clockItem = document.getElementById(BEL.clock.clock_id);
                 if (BEL.clock.current_second > 0) {
-                    BEL.clock.current_second --;
+                    BEL.clock.current_second--;
                     clockItem.value = BEL.clock.current_second;
                 } else {
                     // STOP
@@ -40,37 +44,42 @@ BEL.clock = {
                     clockItem.value = BEL.clock.current_second;
                     clearInterval(BEL.clock.crono);
                 }
-            }
-        }, 1000);
+            }, 1000);
+        } else {
+            if (BEL.clock.crono)
+                clearInterval(BEL.clock.crono);
+        }
     },
-    stop: function () {
-        BEL.clock.running = false;
-        clearInterval(BEL.clock.crono);
-    },
-    reset: function () {
-        BEL.clock.running = false;
-        BEL.clock.current_second = BEL.clock.full_possession;
-        clearInterval(BEL.clock.crono);
+
+    /**
+     *  Reset Timer
+     */
+    reset: function ( seconds = BEL.clock.full_possession) {
+        BEL.clock.current_second = seconds;
 
         var clockItem = document.getElementById(BEL.clock.clock_id);
         if (clockItem) {
-            clockItem.value = BEL.clock.full_possession;
+            clockItem.value = seconds;
         }
     },
+
     /**
      * Key Down Events - Keyboard
      */
     keyDownEvents: function () {
-        jQuery("#key-down-events").keydown(function(event) {
-            switch (event.which) {
-                case 81:  // Q
-                    BEL.clock.start();
+        document.addEventListener('keypress',function (event) {
+            switch (event.key) {
+                case 'q':
+                    BEL.clock.startStop();
                     break;
-                case 87:  // W
-                    BEL.clock.stop();
-                    break;
-                case 69:  // E
+                case 'w':
                     BEL.clock.reset();
+                    break;
+                case 'e':
+                    BEL.clock.reset(14);
+                    break;
+                case 'd':
+                    BEL.clock.reset(18);
                     break;
             }
         });

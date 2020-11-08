@@ -13,34 +13,36 @@
                     </div>
                 </div>
                 <div class="row no-gutters buttons-container">
-                    <div class="col-4 col-md-4">
-                        <button type="button" class="w-100 btn btn-outline-success btn-lg" onclick="BEL.clock.start()">
-                            START
+                    <div class="col-4 col-md-4 col-item">
+                        <button type="button" class="w-100 btn btn-outline-success btn-lg" onclick="BEL.clock.startStop()">
+                            <img src="/assets/images/playPause.png" alt="play pause timer" />
                         </button>
                     </div>
-                    <div class="col-4 col-md-4">
-                        <button type="button" class="w-100 btn btn-outline-danger btn-lg" onclick="BEL.clock.stop()">
-                            STOP
+                    <div class="col-4 col-md-4 col-item">
+                        <button type="button" class="w-100 btn btn-outline-danger btn-lg" onclick="BEL.clock.reset()">
+                            <img src="/assets/images/reset.png" alt="reset timer" />
                         </button>
                     </div>
-                    <div class="col-4 col-md-4">
-                        <button type="button" class="w-100 btn btn-outline-info btn-lg" onclick="BEL.clock.reset()">
-                            RESET
+                    <div class="col-4 col-md-4 col-item">
+                        <button type="button" class="w-100 btn btn-outline-info btn-lg" onclick="BEL.clock.reset(14)">
+                            14
                         </button>
                     </div>
                 </div>
                 <div class="row no-gutters buttons-container">
-                    <div class="col-4 col-md-4">
-                        <input type="password" id="key-down-events" placeholder="atajos de teclado"/>
-                    </div>
-                    <div class="col-4 col-md-4">
+                    <div id="open-popup" class="col-4 col-md-4 col-item">
                         <button type="button" class="w-100 btn btn-outline-info btn-lg" onclick="BEL.clock.openPopup()">
-                            ABRIR POPUP
+                            POPUP
                         </button>
                     </div>
-                    <div class="col-4 col-md-4">
+                    <div class="col-4 col-md-4 col-item">
                         <button type="button" class="w-100 btn btn-outline-info btn-lg" onclick="">
                             NADA
+                        </button>
+                    </div>
+                    <div class="col-4 col-md-4 col-item">
+                        <button type="button" class="w-100 btn btn-outline-info btn-lg" onclick="BEL.clock.reset(18)">
+                            18
                         </button>
                     </div>
                 </div>
