@@ -8,6 +8,7 @@ BEL.clock = {
     current_second: null,
     clock_id: 'clock-timer',
     crono: null,
+    popup: null,
 
     /**
      * Initialize clock. Set initial values.
@@ -70,6 +71,7 @@ BEL.clock = {
         document.addEventListener('keypress',function (event) {
             switch (event.key) {
                 case 'q':
+                case ' ':
                     BEL.clock.startStop();
                     break;
                 case 'w':
@@ -88,9 +90,21 @@ BEL.clock = {
      * Open Popup with Possession Clock & Add Events JS
      */
     openPopup : function () {
-      //  var popup = window.open("test.html","mypopup","width=500,height=300");
-      //  popup.document.getElementById("player").someFunction();
 
-        var popup = window.open("possessionClock.php","popup","width=700,height=700");
+        BEL.clock.popup = window.open("possessionClock.php","popup","width=700,height=700");
+
+        BEL.clock.popup.onload = function() {
+            var clockPopupItem = BEL.clock.popup.document.getElementById("clock-timer-popup");
+
+            setInterval(function () {
+                var clockItem = document.getElementById(BEL.clock.clock_id);
+                clockPopupItem.value = clockItem.value;
+            }, 100);
+
+            /*
+            clockItem.addEventListener('change', (event) => {
+            });
+            */
+        };
     }
 };

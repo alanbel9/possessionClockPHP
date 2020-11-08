@@ -31,15 +31,11 @@
                 </div>
                 <div class="row no-gutters buttons-container">
                     <div id="open-popup" class="col-4 col-md-4 col-item">
-                        <button type="button" class="w-100 btn btn-outline-info btn-lg" onclick="BEL.clock.openPopup()">
+                        <button type="button" id="open-popup-button" class="w-100 btn btn-outline-info btn-lg" onclick="BEL.clock.openPopup()">
                             POPUP
                         </button>
                     </div>
-                    <div class="col-4 col-md-4 col-item">
-                        <button type="button" class="w-100 btn btn-outline-info btn-lg" onclick="">
-                            NADA
-                        </button>
-                    </div>
+                    <div class="col-4 col-md-4 col-item"></div>
                     <div class="col-4 col-md-4 col-item">
                         <button type="button" class="w-100 btn btn-outline-info btn-lg" onclick="BEL.clock.reset(18)">
                             18

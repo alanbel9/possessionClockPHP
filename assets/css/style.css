@@ -31,6 +31,8 @@ body {
     min-height: 150px;
     width: 100%;
     font-size: 100px;
+    background-color: black;
+    color: red;
 }
 .buttons-container button {
     font-size: 1rem;
@@ -47,8 +49,17 @@ body {
     min-height: 100px;
 }
 
-#open-popup {
+#open-popup-button {
     display: none;
+}
+
+#clock-timer-popup {
+    text-align: center;
+    width: 100%;
+    font-size: 700px;
+    font-weight: bold;
+    background-color: black;
+    color: red;
 }
 
 
@@ -70,7 +81,7 @@ body {
         height: 70px;
     }
 
-    #open-popup {
+    #open-popup-button {
         display: block;
     }
 }
