@@ -80,8 +80,4 @@
         </section>
     </main>
 
-    <script type="text/javascript">
-        BEL.clock.init();
-    </script>
-
 <?php require_once("html/base_bottom.php"); ?>
