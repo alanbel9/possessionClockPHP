@@ -1,6 +1,6 @@
 <footer class="mastfoot mt-auto">
     <div class="inner">
-        <p>Zaragoza, España</p>
+        <p>Zaragoza, España   |   Contacto: <a href="mailto:basketball9tools@gmail.com">basketball9tools@gmail.com</a></p>
     </div>
 </footer>
 </div>
