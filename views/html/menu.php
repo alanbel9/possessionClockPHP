@@ -12,11 +12,9 @@
             <li class="nav-item">
                 <a class="nav-link" href="../views/clock.php">Reloj de posesión</a>
             </li>
-            <!--
             <li class="nav-item">
-                <a class="nav-link" href="contact.php">Contacto</a>
+                <a class="nav-link" href="../views/scoreboard.php">Marcador</a>
             </li>
-            -->
         </ul>
     </div>
 </nav>

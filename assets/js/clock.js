@@ -43,6 +43,7 @@ BEL.clock = {
                     // STOP
                     BEL.clock.current_second = BEL.clock.full_possession;
                     clockItem.value = BEL.clock.current_second;
+                    BEL.clock.running = false;
                     clearInterval(BEL.clock.crono);
                 }
             }, 1000);
