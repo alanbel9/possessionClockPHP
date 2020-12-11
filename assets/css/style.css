@@ -54,7 +54,7 @@ body {
     height: 50px;
 }
 .score-board .buttons-container .col-item {
-    min-height: 50px;
+    min-height: 70px;
 }
 
 .buttons-container .col-item {
