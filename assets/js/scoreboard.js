@@ -3,13 +3,14 @@ if (typeof BEL !== 'object') {
 }
 
 BEL.scoreBoard = {
-
     score_board_id : 'score-team-',
-    score_team_1: 0,
-    score_team_2: 0,
+    scores: {
+        1 : 0,  // Team 1
+        2 : 0   // Team 2
+    },
 
     /**
-     *
+     * Update Team Score Process
      * @param points
      * @param team
      */
@@ -19,20 +20,14 @@ BEL.scoreBoard = {
         var newValue = 0;
 
         if (scoreTeam) {
-            if (points === 0) {
-                newValue = points;
-            } else {
-                if (team === 1) {
-                    currentScore = BEL.scoreBoard.score_team_1;
-                    newValue = points + currentScore;
-                    BEL.scoreBoard.score_team_1 = newValue;
-                } else {
-                    currentScore = BEL.scoreBoard.score_team_2;
-                    newValue = points + currentScore;
-                    BEL.scoreBoard.score_team_2 = newValue;
-                }
-            }
+            // Get current TEAM SCORE
+            currentScore = BEL.scoreBoard.scores[team];
 
+            // Get new value to be saved
+            newValue = (points !== 0) ? points + currentScore : points;
+
+            // Save TEAM SCORE
+            BEL.scoreBoard.scores[team] = newValue;
             scoreTeam.val(newValue);
         }
     }
